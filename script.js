@@ -8,6 +8,7 @@ function createGrid(numberPerSide) {
         for(let j = 0; j < numberPerSide; j++) {
             const column = document.createElement("div");
             column.setAttribute("class", "square");
+            column.setAttribute("data-washovered", "0");
             rowDiv.appendChild(column);
         }
         containerDiv.appendChild(rowDiv);
@@ -28,11 +29,21 @@ function setSquares() {
     }
 }
 
+function setColor(element) {
+    if(element.dataset.washovered === "0") {
+        element.setAttribute("data-washovered", "1");
+        const randomR = Math.random() * 255;
+        const randomG = Math.random() * 255;
+        const randomB = Math.random() * 255;
+        element.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     createGrid(20);
     document.querySelector(".container").addEventListener("mouseover", (event) => {
         if(event.currentTarget != event.target) {
-            event.target.classList.add("black");
+            setColor(event.target);
         }
     });
 
