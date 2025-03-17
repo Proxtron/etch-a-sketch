@@ -2,6 +2,7 @@ body {
     height:100vh;
     width:100vw;
     margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -9,6 +10,7 @@ body {
     height:800px;
     display:flex;
     flex-direction: column;
+    border:1px solid red;
 }
 
 .row {
@@ -18,11 +20,23 @@ body {
 }
 
 .square {
-    width:50px;
+    width:800px;
     height:auto;
-    border:1px red solid;
 }
 
 .black {
     background-color: black;
+}
+
+button {
+    margin: 10px;
+}
+.error-div {
+    background-color: #B22222;
+    color:#e7e7e7;
+    width: 200px;
+    margin:10px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
